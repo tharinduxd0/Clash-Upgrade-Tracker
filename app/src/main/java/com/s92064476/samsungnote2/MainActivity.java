@@ -54,27 +54,54 @@ public class MainActivity extends AppCompatActivity {
     private String currentAccountKey = "tharinduxd";
     private static final int STICKY_NOTIF_ID = 7777;
 
-    // MASTER LIST OF COC ITEMS
+    // MASTER LIST OF COC ITEMS (Updated with TH17 & TH18 Content)
     private static final String[] COC_ITEMS = {
-            // Core
-            "Town Hall", "Clan Castle", "Laboratory", "Pet House", "Blacksmith",
-            // Defenses
-            "Cannon", "Archer Tower", "Mortar", "Air Defense", "Wizard Tower",
-            "Air Sweeper", "Hidden Tesla", "Bomb Tower", "X-Bow", "Inferno Tower",
-            "Eagle Artillery", "Scattershot", "Builder's Hut", "Spell Tower",
-            "Monolith", "Multi-Archer Tower", "Ricochet Cannon",
-            // Heroes
-            "Barbarian King", "Archer Queen", "Grand Warden", "Royal Champion", "Minion Prince",
-            // Army
-            "Army Camp", "Barracks", "Dark Barracks", "Spell Factory", "Dark Spell Factory", "Workshop",
-            // Resources
-            "Gold Mine", "Elixir Collector", "Dark Elixir Drill",
-            "Gold Storage", "Elixir Storage", "Dark Elixir Storage",
-            // Traps
-            "Bomb", "Spring Trap", "Giant Bomb", "Air Bomb", "Seeking Air Mine",
-            "Skeleton Trap", "Tornado Trap",
-            // Other
-            "Wall", "Gear Up: Cannon", "Gear Up: Archer Tower", "Gear Up: Mortar"
+            // --- TOWN HALL 18 NEW (Nov 2025) ---
+            "Guardian: Smasher", "Guardian: Longshot", "Super Wizard Tower", "Meteor Golem", "Totem Spell",
+            "Meteorite Builder Skin", "Fancy Shop",
+
+            // --- TOWN HALL 17 NEW (Late 2024) ---
+            "Town Hall 17 (Inferno Artillery)", "Firespitter", "Hero Hall", "Helper Hut",
+            "Minion Prince", "Thrower", "Revive Spell", "Giga Bomb",
+            "Ricochet Cannon", "Multi-Archer Tower", "Multi-Gear Tower",
+
+            // --- CORE BUILDINGS ---
+            "Town Hall", "Clan Castle", "Laboratory", "Pet House", "Blacksmith", "Spell Factory", "Dark Spell Factory", "Workshop",
+
+            // --- DEFENSES ---
+            "Eagle Artillery", "Monolith", "Scattershot", "Inferno Tower", "X-Bow",
+            "Air Defense", "Hidden Tesla", "Bomb Tower", "Wizard Tower", "Air Sweeper", "Builder's Hut", "Spell Tower",
+            "Cannon", "Archer Tower", "Mortar", "Wall",
+
+            // --- HEROES ---
+            "Barbarian King", "Archer Queen", "Grand Warden", "Royal Champion", "Battle Copter", "Battle Machine",
+
+            // --- PETS ---
+            "Spirit Fox", "Angry Jelly", "Phoenix", "Diggy", "Frosty", "Poison Lizard",
+            "L.A.S.S.I", "Electro Owl", "Mighty Yak", "Unicorn",
+
+            // --- ELIXIR TROOPS ---
+            "Root Rider", "Electro Titan", "Dragon Rider", "Yeti", "Electro Dragon", "Miner", "Baby Dragon",
+            "Dragon", "Healer", "P.E.K.K.A", "Wizard", "Balloon", "Wall Breaker", "Goblin", "Giant", "Archer", "Barbarian",
+
+            // --- DARK ELIXIR TROOPS ---
+            "Druid", "Apprentice Warden", "Headhunter", "Ice Golem", "Bowler", "Lava Hound", "Witch", "Golem", "Valkyrie", "Hog Rider", "Minion",
+
+            // --- SUPER TROOPS ---
+            "Super Dragon", "Super Bowler", "Super Witch", "Super Minion", "Super Hog Rider", "Super Wall Breaker", "Sneaky Goblin", "Super Barbarian", "Super Archer", "Super Giant", "Super Wizard", "Ice Hound", "Inferno Dragon", "Rocket Balloon",
+
+            // --- SIEGE MACHINES ---
+            "Battle Drill", "Flame Flinger", "Log Launcher", "Siege Barracks", "Stone Slammer", "Battle Blimp", "Wall Wrecker",
+
+            // --- SPELLS ---
+            "Overgrowth Spell", "Recall Spell", "Invisibility Spell", "Clone Spell", "Poison Spell", "Bat Spell", "Skeleton Spell",
+            "Earthquake Spell", "Haste Spell", "Freeze Spell", "Jump Spell", "Rage Spell", "Healing Spell", "Lightning Spell",
+
+            // --- TRAPS ---
+            "Tornado Trap", "Skeleton Trap", "Seeking Air Mine", "Air Bomb", "Giant Bomb", "Spring Trap", "Bomb",
+
+            // --- RESOURCES ---
+            "Dark Elixir Storage", "Elixir Storage", "Gold Storage", "Dark Elixir Drill", "Elixir Collector", "Gold Mine"
     };
 
     @Override
