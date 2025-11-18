@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/clash_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/clash_panel"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="5dp"
+            android:text="VILLAGE:"
+            android:textColor="@color/clash_orange"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerAccount"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@android:drawable/btn_dropdown"
+            android:backgroundTint="@color/black"
+            android:spinnerMode="dropdown" />
+
+        <Button
+            android:id="@+id/btnManageAccounts"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="@color/clash_panel"
+            android:padding="0dp"
+            android:text="⚙"
+            android:textColor="@color/clash_text_secondary" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvCurrentTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="--:--"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/clash_text_secondary"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/clash_panel"
+        android:padding="15dp"
+        android:elevation="6dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEW UPGRADE"
+            android:textStyle="bold"
+            android:textColor="@color/clash_yellow"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <EditText android:id="@+id/etDays" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:hint="D" android:inputType="number" android:textColor="@color/white" android:textColorHint="#888"/>
+            <EditText android:id="@+id/etHours" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:hint="H" android:inputType="number" android:textColor="@color/white" android:textColorHint="#888"/>
+            <EditText android:id="@+id/etMinutes" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:hint="M" android:inputType="number" android:textColor="@color/white" android:textColorHint="#888"/>
+        </LinearLayout>
+
+        <AutoCompleteTextView
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description (e.g. X-Bow)"
+            android:inputType="textCapSentences"
+            android:textColor="@color/white"
+            android:textColorHint="#888"
+            android:completionThreshold="1"
+            android:popupBackground="@color/clash_panel"/>
+
+        <Button
+            android:id="@+id/btnAddAlarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="START TIMER"
+            android:textStyle="bold"
+            android:backgroundTint="@color/clash_orange"
+            android:textColor="#000"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUILDERS WORKING"
+        android:layout_marginTop="25dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/clash_text_secondary"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>
