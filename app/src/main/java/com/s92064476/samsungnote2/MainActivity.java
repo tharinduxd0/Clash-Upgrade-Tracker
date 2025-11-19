@@ -306,18 +306,26 @@ public class MainActivity extends AppCompatActivity {
     private void deleteAlarm(int position) {
         if (position < 0 || position >= alarmList.size()) return;
         AlarmModel item = alarmList.get(position);
+
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlarmReceiver.class);
 
+        // Cancel Final
         PendingIntent pi1 = PendingIntent.getBroadcast(this, (int)item.getId(), intent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_NO_CREATE);
         if (pi1 != null) { am.cancel(pi1); pi1.cancel(); }
+
+        // Cancel Pre-Alert
         PendingIntent pi2 = PendingIntent.getBroadcast(this, (int)item.getId() + 1, intent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_NO_CREATE);
         if (pi2 != null) { am.cancel(pi2); pi2.cancel(); }
 
         alarmList.remove(position);
         saveAlarms();
         updateStickyNotification();
+
+        // --- SAFETY FIX ---
         adapter.notifyItemRemoved(position);
+        // This line ensures items below the deleted one update their index immediately
+        adapter.notifyItemRangeChanged(position, alarmList.size());
     }
 
     private void updateStickyNotification() {

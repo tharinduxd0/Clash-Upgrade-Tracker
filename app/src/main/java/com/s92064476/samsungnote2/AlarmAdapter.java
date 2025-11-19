@@ -40,7 +40,7 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
         holder.tvDesc.setText(item.getDescription());
         holder.tvTime.setText(item.getFormattedTime());
 
-        // --- FEATURE 4: PROGRESS BAR CALCULATION ---
+        // Progress Bar Logic
         long now = System.currentTimeMillis();
         long totalDuration = item.getTargetTimeInMillis() - item.getStartTimeInMillis();
         long timePassed = now - item.getStartTimeInMillis();
@@ -55,14 +55,20 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
 
         holder.progressBar.setProgress(progress);
 
-        // Color code progress bar (Orange normally, Green if done)
         if (progress >= 100) {
             holder.progressBar.setProgressTintList(ColorStateList.valueOf(Color.GREEN));
         } else {
             holder.progressBar.setProgressTintList(ColorStateList.valueOf(Color.parseColor("#FF9800")));
         }
 
-        holder.btnDelete.setOnClickListener(v -> listener.onDeleteClick(position));
+        // --- FIXED: Changed to getAdapterPosition() ---
+        // This command works on all versions of Android Studio
+        holder.btnDelete.setOnClickListener(v -> {
+            int currentPos = holder.getAdapterPosition();
+            if (currentPos != RecyclerView.NO_POSITION && listener != null) {
+                listener.onDeleteClick(currentPos);
+            }
+        });
     }
 
     @Override
